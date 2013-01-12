@@ -1,0 +1,12 @@
+<queue-entries>
+  <queue>
+    <name>digest</name>
+    <mode>push</mode>
+    <rate>20/s</rate>
+    <bucket-size>100</bucket-size>
+    <max-concurrent-requests>20</max-concurrent-requests>
+    <retry-parameters>
+      <task-retry-limit>1</task-retry-limit>
+    </retry-parameters>
+  </queue>
+</queue-entries>

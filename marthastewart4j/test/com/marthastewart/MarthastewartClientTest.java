@@ -28,6 +28,7 @@ public class MarthastewartClientTest {
 		final MarthastewartClient client = new MarthastewartClient(requestFactory, 60000, 60000);
 		final ArticleInfo info = client.getArticleInfo(url);
 		
+		assertEquals("330153", info.id);
 		assertEquals(url, info.url);
 		assertEquals(ArticleInfo.TYPE_RECIPE, info.type);
 		assertEquals(ArticleInfo.SOURCE_MADHUNGRY, info.source);
@@ -41,6 +42,7 @@ public class MarthastewartClientTest {
 		final MarthastewartClient client = new MarthastewartClient(requestFactory, 60000, 60000);
 		final ArticleInfo info = client.getArticleInfo(url);
 		
+		assertEquals("925889", info.id);
 		assertEquals(url, info.url);
 		assertEquals(ArticleInfo.TYPE_RECIPE, info.type);
 		assertEquals(ArticleInfo.SOURCE_LIVING, info.source);
@@ -54,6 +56,7 @@ public class MarthastewartClientTest {
 		final MarthastewartClient client = new MarthastewartClient(requestFactory, 60000, 60000);
 		final ArticleInfo info = client.getArticleInfo(url);
 		
+		assertEquals("332607", info.id);
 		assertEquals(url, info.url);
 		assertEquals(ArticleInfo.TYPE_RECIPE, info.type);
 		assertEquals(ArticleInfo.SOURCE_SHOW, info.source);
@@ -67,6 +70,7 @@ public class MarthastewartClientTest {
 		final MarthastewartClient client = new MarthastewartClient(requestFactory, 60000, 60000);
 		final ArticleInfo info = client.getArticleInfo(url);
 		
+		assertEquals("925233", info.id);
 		assertEquals(url, info.url);
 		assertEquals(ArticleInfo.TYPE_RECIPE, info.type);
 		assertEquals(ArticleInfo.SOURCE_EVERYDAYFOOD, info.source);
@@ -80,6 +84,7 @@ public class MarthastewartClientTest {
 		final MarthastewartClient client = new MarthastewartClient(requestFactory, 60000, 60000);
 		final ArticleInfo info = client.getArticleInfo(url);
 		
+		assertEquals("274693", info.id);
 		assertEquals(url, info.url);
 		assertEquals(ArticleInfo.TYPE_CENTER, info.type);
 		assertNull(info.source);
@@ -93,6 +98,7 @@ public class MarthastewartClientTest {
 		final MarthastewartClient client = new MarthastewartClient(requestFactory, 60000, 60000);
 		final ArticleInfo info = client.getArticleInfo(url);
 		
+		assertEquals("269031", info.id);
 		assertEquals(url, info.url);
 		assertEquals(ArticleInfo.TYPE_ARTICLE, info.type);
 		assertNull(info.source);

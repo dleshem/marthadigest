@@ -31,6 +31,26 @@ public class MarthastewartClient {
 		this.readTimeout = readTimeout;
 	}
 	
+	public String getId(String articleUrl) {
+		final Matcher matcher = ARTICLE_URL_PATTERN.matcher(articleUrl);
+		if (matcher.matches()) {
+			if (matcher.groupCount() == 2) {
+				return matcher.group(1);
+			}
+		}
+		return null;
+	}
+	
+	public String getShortName(String articleUrl) {
+		final Matcher matcher = ARTICLE_URL_PATTERN.matcher(articleUrl);
+		if (matcher.matches()) {
+			if (matcher.groupCount() == 2) {
+				return matcher.group(2);
+			}
+		}
+		return null;
+	}
+	
 	public List<String> getArticleUrls() throws IOException {
 		final List<String> articleUrls = new LinkedList<String>();
 		
@@ -72,6 +92,12 @@ public class MarthastewartClient {
 	}
 	
 	public ArticleInfo getArticleInfo(String articleUrl) throws IOException {
+		String id = getId(articleUrl);
+        String type = null;
+        String source = null;
+        Integer year = null;
+        Integer month = null;
+        
     	final HttpRequest request = requestFactory.buildGetRequest(new GenericUrl(articleUrl));
         if (connectTimeout != null) {
         	request.setConnectTimeout(connectTimeout);
@@ -79,11 +105,6 @@ public class MarthastewartClient {
         if (readTimeout != null) {
         	request.setReadTimeout(readTimeout);
         }
-
-        String type = null;
-        String source = null;
-        Integer year = null;
-        Integer month = null;
         
         final HttpResponse response = request.execute();
         try {
@@ -118,6 +139,6 @@ public class MarthastewartClient {
         	response.ignore();
         }
 		
-		return new ArticleInfo(articleUrl, type, source, year, month);
+		return new ArticleInfo(id, articleUrl, type, source, year, month);
 	}
 }

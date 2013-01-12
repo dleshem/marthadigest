@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cronentries>
+  <cron>
+    <url>/admin/cron/digest</url>
+    <description>Queries marthastewart.com for new articles</description>
+    <schedule>every 24 hours</schedule>
+  </cron>
+</cronentries>
